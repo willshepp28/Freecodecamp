@@ -38,77 +38,19 @@ You should use recursion to solve this problem.
 
 
 function sum(arr, n) {
-    // Only change code below this line
-  if(!n) { return 0};
-
-
-
-  
-    // Only change code above this line
+  // Only change code below this line
+  if(n <= 0){
+    return 0;
+  } else {
+    return arr[n-1] + sum(arr, n - 1)
   }
-
-//   sum([2, 3, 4], 1)
-
+  // Only change code above this line
 
 
-
-  function pow(x, n){
-      let result = 1;
-
-      for(let i =0; i < n; i++) {
-          result *= x;
-      }
-
-      return result;
-  };
-
-//   console.log(pow(2,4));
+}
 
 
-
-  function recusive(x, n) {
-    if(n === 1) {
-        return x;
-    } else {
-        return x * recusive(x, n -1);
-    }
-  }
-
-//   console.log(recusive(2,3))
-
-
-
-  function add(a, b){
-      if(b === 1){
-          return a;
-      } else {
-          return a + add(a, b -1);
-      }
-  }
-
-
-//   add(2, 3);
-//   console.log(add(4,3));
-
-
-  function recursionTest(number,counter){
-      if(counter === 1){
-          return number;
-      } else {
-          return number + recusiveTest()
-      }
-  }
-
-
-  function countDown(number){
-      if(number === 1) {
-          console.log(number);
-          return;
-      }
-
-      console.log(number);
-      countDown(number - 1)
-  }
-
-
-  countDown(3);
+console.log(sum([1], 0))
+console.log(sum([2, 3, 4], 1))
+console.log(sum([2, 3, 4, 5], 3))
+console.log(sum([2, 3, 4, 5], 2))
